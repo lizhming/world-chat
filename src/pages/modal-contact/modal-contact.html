@@ -1,0 +1,33 @@
+<!--
+  Generated template for the ModalContactPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+    <ion-title>Select Contact</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()"></ion-searchbar>
+  <div style="height:100%">
+    <ion-list [virtualScroll]="allContacts" approxItemHeight="50px">
+      <ion-item *virtualItem="let o" (click)="selectContact(o.phone)">
+        {{ o.name }} - {{ o.phone }}
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="allContacts.length==0" approxItemHeight="50px">
+      <ion-item>
+        No Record Found for {{searchTerm}}
+      </ion-item>
+      <ion-item>
+        <button ion-button color="secondary" clear (click)="addNewPhoneNo()">Add New Contact</button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,74 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <span *ngFor="let chatUser of conversation?.users">
+        <span *ngIf="chatUser?.username !== user?.username" (click)="viewProfile(chatUser)">
+          {{chatUser?.username}}
+        </span>
+      </span>
+    </ion-title>
+    <!--<ion-fab style="top: 0px;" top right #fab>-->
+      <!--<button ion-fab mini>-->
+        <!--<ion-icon name="add" role="img" class="icon icon-ios ion-ios-add" aria-label="add"></ion-icon>-->
+      <!--</button>-->
+      <!--<ion-fab-list side="left">-->
+        <!--<button ion-button (click)="addByContacts(fab)">-->
+          <!--Contacts <ion-icon name="contacts" style="padding-left: 5px;"></ion-icon>-->
+        <!--</button>-->
+        <!--<button ion-button (click)="addByUsername(fab)">-->
+          <!--Username <ion-icon name="person-add" style="padding-left: 5px;"></ion-icon>-->
+        <!--</button>-->
+      <!--</ion-fab-list>-->
+    <!--</ion-fab>-->
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="message-wrap">
+
+    <div *ngIf="!msgList || !msgList.length">
+      <br>
+      <br>
+      <br>
+      <h4 text-center>No messages yet</h4>
+    </div>
+
+    <div *ngIf="hasLoadedMessages">
+      <div *ngFor="let msg of msgList | sortByTime" class="message" [class.left]=" msg?.sentBy !== user.$id " [class.right]=" msg?.sentBy === user.$id">
+        <img class="user-img" [src]="msg.thumb || 'assets/imgs/nopic-profile.png'" imageViewer onerror="this.src = 'assets/imgs/nopic-profile.png'">
+        <div class="msg-detail">
+          <div class="msg-content">
+            <span class="triangle"></span>
+            <p class="line-breaker ">{{msg?.message[user.language]}}</p>
+          </div>
+          <!--<div class="msg-info">-->
+            <!--<p>-->
+              <!--{{msg?.username}}&nbsp;&nbsp;{{msg?.time | relativeTime}}</p>-->
+          <!--</div>-->
+        </div>
+      </div>
+      <h6 style="color: rgba(150, 150, 150, 0.8); font-size: 0.8em;" *ngIf="msgList.length">
+        Read by <span *ngFor="let username of readBy" style="margin-right: 5px;">{{username}}</span>
+      </h6>
+    </div>
+
+  </div>
+
+</ion-content>
+
+<ion-footer no-border [style.height]="showEmojiPicker ? '255px' : '55px'">
+  <div class="input-wrap">
+    <!--<button ion-button clear icon-only item-right (click)="switchEmojiPicker()">-->
+      <!--<ion-icon name="md-happy"></ion-icon>-->
+    <!--</button>-->
+    <textarea #chat_input placeholder="Text Input" [(ngModel)]="editorMsg" (keyup.enter)="sendMsg()" (focusin)="onFocus()">
+    </textarea>
+    <button ion-button clear icon-only item-right (click)="sendMsg()">
+      <ion-icon name="ios-send" ios="ios-send" md="md-send"></ion-icon>
+    </button>
+  </div>
+  <!--<emoji-picker [(ngModel)]="editorMsg"></emoji-picker>-->
+</ion-footer>

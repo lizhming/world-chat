@@ -1,0 +1,88 @@
+{
+  "array": [{
+      "messageId": "1",
+      "userId": "140000198202211138",
+      "userName": "User",
+      "userImgUrl": "./assets/user.png",
+      "toUserId": "210000198410281948",
+      "toUserName": "Admin",
+      "userAvatar": "./assets/to-user.png",
+      "time": 1531433700000,
+      "message": "Hi There?",
+      "status": "success"
+
+    },
+    {
+      "messageId": "2",
+      "userId": "210000198410281948",
+      "userName": "Admin",
+      "userImgUrl": "./assets/to-user.png",
+      "toUserId": "140000198202211138",
+      "toUserName": "User",
+      "userAvatar": "./assets/user.png",
+      "time": 1531433700000,
+      "message": "Hello?",
+      "status": "success"
+    },
+    {
+      "messageId": "3",
+      "userId": "140000198202211138",
+      "userName": "User",
+      "userImgUrl": "./assets/user.png",
+      "toUserId": "210000198410281948",
+      "toUserName": "Admin",
+      "userAvatar": "./assets/to-user.png",
+      "time": 1531433700000,
+      "message": "Most of you are familiar with the virtues of a programmer.",
+      "status": "success"
+    },
+    {
+      "messageId": "4",
+      "userId": "210000198410281948",
+      "userName": "Admin",
+      "userImgUrl": "./assets/to-user.png",
+      "toUserId": "140000198202211138",
+      "toUserName": "User",
+      "userAvatar": "./assets/user.png",
+      "time": 1531433700000,
+      "message": "One man’s enterprise software is another man’s full time job.",
+      "status": "success"
+    },
+    {
+      "messageId": "5",
+      "userId": "210000198410281948",
+      "userName": "Admin",
+      "userImgUrl": "./assets/to-user.png",
+      "toUserId": "140000198202211138",
+      "toUserName": "User",
+      "userAvatar": "./assets/user.png",
+      "time": 1531433700000,
+      "message": "Programming is the ingenuity to work with the science and engineering.",
+      "status": "success"
+    },
+    {
+      "messageId": "6",
+      "userId": "140000198202211138",
+      "userName": "User",
+      "userImgUrl": "./assets/user.png",
+      "toUserId": "210000198410281948",
+      "toUserName": "Admin",
+      "userAvatar": "./assets/to-user.png",
+      "time": 1531435200000,
+      "message": "If at first you don’t succeed, call it version 1.0",
+      "status": "success"
+    },
+    {
+      "messageId": "7",
+      "userId": "140000198202211138",
+      "userName": "User",
+      "userImgUrl": "./assets/user.png",
+      "toUserId": "210000198410281948",
+      "toUserName": "Admin",
+      "userAvatar": "./assets/to-user.png",
+      "time": 1531435200000,
+      "message": "The Ionic Framework enables the creation of cross platform mobile applications with HTML, CSS and JavaScript(Angular). Ionic 1 was built with Angular 1.*, and with Angular 2 recently released, the second major version of Ionic is also imminent.",
+      "status": "success"
+    }
+  ]
+}

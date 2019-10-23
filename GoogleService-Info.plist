@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>893888740923-g1ajf7ccdum704hp732tnqr7vhf769ss.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.893888740923-g1ajf7ccdum704hp732tnqr7vhf769ss</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>893888740923-hn3qc0f870i8o0sjo8lepdqlv80g5j15.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCvOhNfFZGTaMhi6r84U2zvZg6JFRJqqAw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>893888740923</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.letschat.app</string>
+	<key>PROJECT_ID</key>
+	<string>letstalk-205602</string>
+	<key>STORAGE_BUCKET</key>
+	<string>letstalk-205602.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:893888740923:ios:59889419ce5726414ce61e</string>
+	<key>DATABASE_URL</key>
+	<string>https://letstalk-205602.firebaseio.com</string>
+</dict>
+</plist>

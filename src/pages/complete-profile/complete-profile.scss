@@ -1,0 +1,29 @@
+page-complete-profile {
+  ion-item {
+    margin-bottom: 32px !important;
+  }
+  form,
+  input,
+  optgroup,
+  select {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    width: 80%;
+    padding: 8px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  .input {
+    border: 1px solid #b7bbbd;
+    border-radius: 2px;
+    padding: 2px;
+    width: 204px;
+    height: 40px;
+    margin-left: 31px;
+  }
+  ion-slides {
+    height: auto;
+    padding-top: 16px;
+  }
+}

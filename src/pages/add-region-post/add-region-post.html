@@ -1,0 +1,41 @@
+<!--<ion-header class="cHeader">-->
+<!--  <ion-navbar>-->
+<!--    <ion-title>-->
+<!--      Regions-->
+<!--      <button ion-button>-->
+<!--        Username <ion-icon name="person-add" style="padding-left: 5px;"></ion-icon>-->
+<!--      </button>-->
+<!--    </ion-title>-->
+<!--  </ion-navbar>-->
+<!--</ion-header>-->
+<ion-content padding>
+  <ion-title style="text-align: center;">
+    New Post
+    <button ion-button style="position: fixed; top: 0px; left: 0px; background-color: transparent; box-shadow: none; color: black; height: 25px;font-size: 1.2em; padding: 0px; margin: 0px;"
+            (click)="viewCtrl.dismiss()">
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </button>
+  </ion-title>
+
+  <div class="profile_header">
+    <div class="img_cont" style="width: 100%; text-align: center;">
+      <img [src]="post.image" *ngIf="post && post.image" (click)="presentActionSheet()" style="max-height: 100px;" />
+      <button ion-button style="background-color: #02be98; margin-top: 20px;" (click)="presentActionSheet()" *ngIf="!post.image">Add Picture</button>
+    </div>
+  </div>
+
+  <ion-item>
+    <ion-label stacked>Name of Location (Momument, State, etc.)</ion-label>
+    <ion-input [(ngModel)]="post.locationName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Country</ion-label>
+    <ion-input [(ngModel)]="post.region"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Description</ion-label>
+    <ion-textarea rows="3" [(ngModel)]="post.description"></ion-textarea>
+  </ion-item>
+
+  <button ion-button full style="background-color: #02be98; margin-top: 20px;" (click)="savePost()">Post</button>
+</ion-content>

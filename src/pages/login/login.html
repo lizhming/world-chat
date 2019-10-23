@@ -1,0 +1,180 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>-->
+
+<!--<ion-navbar>-->
+<!--<ion-title>Login</ion-title>-->
+<!--</ion-navbar>-->
+
+<!--</ion-header>-->
+
+<ion-content padding class="login_pg">
+
+  <div style="margin: 0px auto; display: block;" col-xs-12 col-md-6 col-lg-4>
+    <div class="pg_title">WorldChat</div>
+    <img src="assets/imgs/logo.png" class="logo" />
+
+    <!-- Login -->
+    <ion-grid *ngIf="mode == 'login'">
+
+      <!--<h1 style="width: 100%; text-align: center;">Login with:</h1>-->
+      <ion-list radio-group [(ngModel)]="emailOrPhone" class="emailOrPhone" col-5 col-xl-12 col-sm-12>
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-radio value="email" [checked]="emailOrPhone === 'email'"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Phone</ion-label>
+          <ion-radio value="phone" [checked]="emailOrPhone === 'phone'"></ion-radio>
+        </ion-item>
+      </ion-list>
+      <p>&nbsp;</p>
+      <ion-label [style.display]="emailOrPhone === 'phone' ? 'block' : 'none'" class="formControl_lable">Phone
+      </ion-label>
+      <ion-input type="number" class="formControl" placeholder="Phone"
+        [style.display]="emailOrPhone === 'phone' ? 'block' : 'none'" [(ngModel)]="phone"></ion-input>
+      <ion-label [style.display]="emailOrPhone === 'email' ? 'block' : 'none'" class="formControl_lable">Email
+      </ion-label>
+      <ion-input type="email" class="formControl" placeholder="hello@email.com"
+        [style.display]="emailOrPhone === 'email' ? 'block' : 'none'" [(ngModel)]="email"></ion-input>
+      <p></p>
+      <ion-label class="formControl_lable">Password</ion-label>
+      <ion-input type="password" class="formControl" placeholder="At least 6 characters" [(ngModel)]="password"
+        (keyup.enter)="signIn(email, phone, password)"></ion-input>
+    </ion-grid>
+    <!-- End Login -->
+
+    <!-- <span *ngIf="mode !== 'login'">
+        <p>International Phone Number</p>
+        <int-phone-prefix defaultCountry="us" [(ngModel)]="phoneNumber"></int-phone-prefix>
+        <p>Local Phone Number</p>
+      </span> -->
+
+    <!-- Register -->
+    <span *ngIf="mode !== 'login' && mode !== 'forgots'">
+
+      <ion-label class="formControl_lable">Phone</ion-label>
+      <div class="phoneGroup">
+        <int-phone-prefix class="telCode" defaultCountry="us" [(ngModel)]="phoneNumber"></int-phone-prefix>
+        <!-- <ion-input type="number" class="formControl" placeholder="Please Enter Number" [(ngModel)]="phone" (keyup)="phoneNumber = phone"></ion-input> -->
+        <ion-input type="number" class="formControl" placeholder="Please Enter Number" [(ngModel)]="phone"></ion-input>
+      </div>
+      <ion-label class="formControl_lable" margin-top>Email</ion-label>
+      <ion-input type="email" class="formControl" placeholder="hello@email.com" [(ngModel)]="email"></ion-input>
+      <ion-label class="formControl_lable" margin-top>Password</ion-label>
+      <ion-input type="password" class="formControl" placeholder="At least 6 characters" [(ngModel)]="password">
+      </ion-input>
+      <ion-label class="formControl_lable" margin-top>First Name</ion-label>
+      <ion-input type="text" class="formControl" placeholder="John" [(ngModel)]="firstname"></ion-input>
+      <ion-label class="formControl_lable" margin-top>Last Name</ion-label>
+      <ion-input type="text" class="formControl" placeholder="Legend" [(ngModel)]="lastname"></ion-input>
+    </span>
+    <!-- End Register -->
+
+    <!-- forgotpassword password -->
+    <ion-grid *ngIf="mode !== 'login' && mode !== 'register'">
+
+      <div *ngIf="Isforgotpasswordcode==0">
+        <ion-list radio-group [(ngModel)]="emailOrPhoneforgotpassword" class="emailOrPhone" col-5 col-xl-12 col-sm-12>
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-radio value="email" [checked]="emailOrPhoneforgotpassword === 'email'"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Phone</ion-label>
+            <ion-radio value="phone" [checked]="emailOrPhoneforgotpassword === 'phone'"></ion-radio>
+          </ion-item>
+        </ion-list>
+        <p>&nbsp;</p>
+        <ion-label [style.display]="emailOrPhoneforgotpassword === 'phone' ? 'block' : 'none'"
+          class="formControl_lable">
+          Phone
+        </ion-label>
+        <div class="phoneGroup">
+          <int-phone-prefix class="telCode" defaultCountry="us" [(ngModel)]="countrycode"
+            [style.display]="emailOrPhoneforgotpassword === 'phone' ? 'block' : 'none'"></int-phone-prefix>
+          <ion-input type="number" class="formControl" placeholder="Please Enter Number"
+            [style.display]="emailOrPhoneforgotpassword === 'phone' ? 'block' : 'none'" [(ngModel)]="forgotphone">
+          </ion-input>
+        </div>
+        <ion-label [style.display]="emailOrPhoneforgotpassword === 'email' ? 'block' : 'none'"
+          class="formControl_lable">
+          Email
+        </ion-label>
+        <ion-input type="email" class="formControl" placeholder="Email"
+          [style.display]="emailOrPhoneforgotpassword === 'email' ? 'block' : 'none'" [(ngModel)]="forgotemail">
+        </ion-input>
+        <br />
+        <div text-center>
+          <button text-center ion-button clear (click)="forgotpassword(forgotemail,countrycode,forgotphone)"
+            class="btnWhite">Submit</button>
+          <p></p>
+          <button text-center ion-button clear (click)="mode = 'login'" class="btnLink">Back to login</button>
+        </div>
+      </div>
+
+      <div *ngIf="Isforgotpasswordcode==1">
+        <ion-label class="formControl_lable">
+          Code
+        </ion-label>
+        <ion-input type="number" class="formControl" placeholder="Enter your code" [(ngModel)]="forgotcode">
+        </ion-input>
+        <br />
+        <div text-center>
+          <button text-center ion-button clear (click)="verifyforgotcode(forgotcode)" class="btnWhite">Next</button>
+          <p></p>
+          <button text-center ion-button clear (click)="mode = 'login'" class="btnLink">Back to login</button>
+        </div>
+      </div>
+
+      <div *ngIf="Isforgotpasswordchange==true">
+        <ion-label class="formControl_lable">New Password</ion-label>
+        <ion-input type="password" class="formControl" placeholder="At least 6 characters" [(ngModel)]="newpassword">
+        </ion-input>
+        <p></p>
+        <ion-label class="formControl_lable">Confirm Password</ion-label>
+        <ion-input type="password" class="formControl" placeholder="Confirm Password" [(ngModel)]="confpassword">
+        </ion-input>
+        <br />
+        <div text-center>
+          <button text-center ion-button clear (click)="changepassword(newpassword,confpassword)"
+            class="btnWhite">Save</button>
+        </div>
+      </div>
+
+
+
+    </ion-grid>
+    <!--End forgotpassword password -->
+
+
+    <br />
+
+    <!-- login section -->
+    <div text-center *ngIf="mode === 'login'">
+      <button text-center ion-button clear (click)="signIn(email, phone, password)" class="btnWhite">Login</button>
+      <!-- <ion-label stacked>OR</ion-label> -->
+      <p></p>
+      <button text-center ion-button clear (click)="mode = 'register'" class="btnLink">Don't Have an Account?</button>
+      <button text-center ion-button clear (click)="Gotoforgotpassword()" class="btnLink">Forgot your password?</button>
+    </div>
+    <!-- End login section -->
+
+    <!-- Register section -->
+    <div text-center *ngIf="mode !== 'login' && mode !== 'forgots'">
+      <button text-center ion-button clear (click)="register(phoneNumber, phone, email, password, firstname, lastname)"
+        class="btnWhite">Register</button>
+      <!-- <ion-label stacked>OR</ion-label> -->
+      <p></p>
+      <button text-center ion-button clear (click)="mode = 'login'" class="btnLink">Already Have an Account?</button>
+    </div>
+    <!-- End Register section -->
+
+
+  </div>
+
+</ion-content>

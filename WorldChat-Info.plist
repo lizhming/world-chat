@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>World Chat uses your photo library to select and update your profile picture.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>World Chat uses your camera to capture and update your profile picture, and also scan profiles if you use Temp Chat.</string>
+    <key>NSContactsUsageDescription</key>
+    <string>World Chat allows you to invite your contacts.</string>
+  </dict>
+</plist>

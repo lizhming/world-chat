@@ -1,0 +1,113 @@
+{
+  "name": "world-chat",
+  "version": "0.0.5",
+  "author": "Darpan Patel and Hunter Trawick",
+  "homepage": "http://www.theexhibitionontour.com/",
+  "private": true,
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "lint": "ionic-app-scripts lint",
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
+  "dependencies": {
+    "@angular/animations": "5.2.11",
+    "@angular/common": "5.2.11",
+    "@angular/compiler": "5.2.11",
+    "@angular/compiler-cli": "5.2.11",
+    "@angular/core": "5.2.11",
+    "@angular/forms": "5.2.11",
+    "@angular/http": "5.2.11",
+    "@angular/platform-browser": "5.2.11",
+    "@angular/platform-browser-dynamic": "5.2.11",
+    "@ionic-native/admob-free": "4.8.0",
+    "@ionic-native/admob-pro": "^5.3.0",
+    "@ionic-native/barcode-scanner": "^4.8.0",
+    "@ionic-native/camera": "^4.8.0",
+    "@ionic-native/clipboard": "^4.20.0",
+    "@ionic-native/contacts": "^4.9.2",
+    "@ionic-native/core": "4.8.0",
+    "@ionic-native/device": "^4.8.0",
+    "@ionic-native/fcm": "^4.20.0",
+    "@ionic-native/firebase": "4.8.0",
+    "@ionic-native/keyboard": "^5.13.0",
+    "@ionic-native/sms": "4.8.0",
+    "@ionic-native/splash-screen": "4.8.0",
+    "@ionic-native/status-bar": "4.8.0",
+    "@ionic/storage": "2.1.3",
+    "angular-linky": "^1.2.2",
+    "angular2-qrcode": "^2.0.1",
+    "cordova": "^9.0.0",
+    "cordova-admob-sdk": "^0.17.0",
+    "cordova-android": "^8.0.0",
+    "cordova-browser": "~5.0.4",
+    "cordova-clipboard": "~1.2.1",
+    "cordova-ios": "~4.5.5",
+    "cordova-plugin-admob-free": "~0.17.3",
+    "cordova-plugin-admobpro": "^2.35.3",
+    "cordova-plugin-camera": "~4.0.3",
+    "cordova-plugin-compat": "^1.2.0",
+    "cordova-plugin-contacts": "^2.3.1",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-extension": "^1.5.4",
+    "cordova-plugin-fcm-with-dependecy-updated": "^2.2.6",
+    "cordova-plugin-firebase": "~1.0.5",
+    "cordova-plugin-inappbrowser": "~3.0.0",
+    "cordova-plugin-ionic-keyboard": "^2.1.2",
+    "cordova-plugin-ionic-webview": "^1.2.1",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.3",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-promise-polyfill": "0.0.2",
+    "date-fns": "^1.29.0",
+    "firebase": "^5.2.0",
+    "ionic-angular": "3.9.2",
+    "ionic-img-viewer": "^2.9.0",
+    "ionicons": "3.0.0",
+    "moment": "2.22.2",
+    "ng4-intl-phone": "^1.2.1",
+    "ngx-lazy-load-images": "^1.3.1",
+    "phonegap-plugin-barcodescanner": "~8.0.0",
+    "rxjs": "5.5.11",
+    "sw-toolbox": "3.6.0",
+    "zone.js": "0.8.26"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "^3.2.4",
+    "typescript": "~2.6.2"
+  },
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-contacts": {
+        "CONTACTS_USAGE_DESCRIPTION": " "
+      },
+      "cordova-plugin-camera": {},
+      "phonegap-plugin-barcodescanner": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-inappbrowser": {},
+      "cordova-clipboard": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-fcm-with-dependecy-updated": {},
+      "cordova-plugin-admobpro": {
+        "PLAY_SERVICES_VERSION": "16.0.0",
+        "ADMOB_APP_ID": "ca-app-pub-9161240946129783~4517916437"
+      },
+      "cordova-plugin-admob-free": {
+        "ADMOB_APP_ID": "ca-app-pub-9161240946129783~9424324062"
+      }
+    },
+    "platforms": [
+      "ios",
+      "browser",
+      "android"
+    ]
+  }
+}

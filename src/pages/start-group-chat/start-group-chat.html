@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Start Group Chat
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!--<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>-->
+  <ion-list>
+
+<!--    <button ion-button (click)="addByContacts()" *ngIf="!browser">-->
+<!--      Add a person via Contacts <ion-icon name="contacts" style="padding-left: 5px;"></ion-icon>-->
+<!--    </button>-->
+    <button ion-button (click)="addByUsername()">
+      Add a person via Username <ion-icon name="person-add" style="padding-left: 5px;"></ion-icon>
+    </button>
+
+
+    <ion-item-sliding *ngFor="let person of people" #item>
+      <ion-item>
+        <!--<ion-avatar item-left>-->
+          <!--<img src="./assets/user.png">-->
+        <!--</ion-avatar>-->
+        {{person.firstName || person.userName}} <span *ngIf="person.firstName">{{person.lastName || ''}}</span>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="removePerson(person, i)">Remove</button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <button ion-button (click)="newConversation()" *ngIf="people && people.length > 0">
+      Start Conversation
+    </button>
+  </ion-list>
+</ion-content>

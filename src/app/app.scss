@@ -1,0 +1,337 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+.tabbar {
+  background: transparent !important;
+}
+
+.tabbar::before {
+  background: transparent !important;
+}
+
+ion-navbar {
+  position: relative;
+  display: block;
+}
+
+.isIphoneX {
+
+  // @media only screen 
+  //   and (device-width : 375px) 
+  //   and (device-height : 812px) 
+  //   and (-webkit-device-pixel-ratio : 3) {
+  ion-navbar {
+    .toolbar-content {
+      pointer-events: none;
+    }
+  }
+
+  ion-fab {
+    margin-top: 45px;
+  }
+
+  .back-button {
+    margin-top: 45px;
+  }
+
+  ion-footer {
+    padding-bottom: 45px !important;
+  }
+}
+
+.isIphone {
+  ion-navbar {
+    .toolbar-content {
+      pointer-events: none;
+    }
+  }
+
+  ion-fab {
+    margin-top: 25px;
+  }
+
+  .back-button {
+    margin-top: 25px;
+  }
+
+  ion-footer {
+    padding-bottom: 25px !important;
+  }
+
+  .message-wrap {
+    padding-bottom: 25px !important;
+  }
+}
+
+.isBrowser {
+  .scroll-content {
+    overflow-y: auto;
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .tabbar {
+    height: 0px;
+    display: block;
+  }
+
+  page-chats {
+    .profile-tab {
+      height: 75px;
+      display: block;
+      width: 250px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+      h3 {
+        width: calc(100% - 80px);
+        display: inline-block;
+        margin-top: 15px;
+        float: right;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      button {
+        margin-top: -25px;
+        width: calc(100% - 80px);
+        display: block;
+        float: right;
+        vertical-align: text-top;
+        padding: 7.5px 0px 7.5px 5px;
+        text-align: left;
+        background: transparent !important;
+        color: #91AAE6;
+        font-size: 1.2em;
+        font-weight: bolder;
+      }
+    }
+
+    .chats-tab {
+      display: block;
+      width: 250px;
+
+      ion-content {
+        height: calc(100% - 60px);
+
+        .scroll-content {
+          height: calc(100% - 75px);
+          margin-top: 0px !important;
+          box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1) inset;
+        }
+      }
+    }
+
+    //.web-navbar {
+    //  height: 75px;
+    //  width: 100%;
+    //  display: block;
+    //}
+    .message-view {
+      display: block;
+      width: calc(100% - 250px);
+      //height: calc(100% - 75px);
+      height: 100%;
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      overflow-y: hidden;
+      padding-bottom: 65px;
+
+      ion-footer {
+        height: 100px!important;
+        bottom: 0px !important;
+      }
+
+      .scroll-content {
+        margin-bottom: 95px !important;
+      }
+
+      #message-entry {
+        height: 100px !important;
+        max-height: 100px !important;
+      }
+    }
+
+    .message-view-no-chats {
+      .logo {
+        width: 200px;
+        display: block;
+        margin: 50px auto 20px;
+      }
+
+      h1,
+      h2,
+      p {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .multi-container {
+      ion-label {
+        overflow: visible;
+      }
+    }
+
+    .self-img {
+      height: 60px;
+      width: 60px;
+      display: inline-block;
+      vertical-align: middle;
+      top: 7.5px;
+      left: 10px;
+    }
+  }
+}
+
+
+.cFab {
+  .fab-md {
+    background: #02be98;
+  }
+
+  .button-md {
+    background: #02be98;
+    border-radius: 25px;
+
+    .button-inner {
+      justify-content: flex-end;
+      text-transform: capitalize;
+    }
+  }
+
+  ion-fab-list {
+    right: 0;
+    text-align: right;
+    align-items: flex-end;
+  }
+}
+
+.cTabs {
+  .tabbar {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    padding-bottom: 0px;
+
+    .tab-button{
+      color: #7f7f7f;
+      font-weight: 500;
+      &:nth-child(1) {
+        .tab-button-icon {
+          &::before {
+            content: url('../assets/imgs/icon-chats.png');
+          }
+        }
+      }
+      &:nth-child(2) {
+        .tab-button-icon {
+          &::before {
+            content: url('../assets/imgs/icon-temp-chat.png');
+          }
+        }
+      }
+      &:nth-child(3) {
+        .tab-button-icon {
+          &::before {
+            content: url('../assets/imgs/icon-user.png');
+          }
+        }
+      }
+      &[aria-selected=true]{
+        color: #02be98;
+        &:nth-child(1) {
+          .tab-button-icon {
+            &::before {
+              content: url('../assets/imgs/icon-chats-hover.png');
+            }
+          }
+        }
+        &:nth-child(2) {
+          .tab-button-icon {
+            &::before {
+              content: url('../assets/imgs/icon-temp-chat-hover.png');
+            }
+          }
+        }
+        &:nth-child(3) {
+          .tab-button-icon {
+            &::before {
+              content: url('../assets/imgs/icon-user-hover.png');
+            }
+          }
+        }
+
+        .tab-button-icon {
+          color: #02be98!important;
+        }
+      }
+     
+    }
+    
+
+   
+  }
+
+}
+
+.infoMsg{
+  color: #7f7f7f;
+  font-weight: 400;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+
+.btn_Rescan{
+  height: 40px;
+  width: 100%;
+  max-width: 140px;
+  background: #02be98;
+  border-radius: 12px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  &.activated{
+    background: rgba(2, 190, 152,0.8);
+    color: #fff;
+  }
+}
+
+.cHeader{
+    
+}
+
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}

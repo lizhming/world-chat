@@ -1,0 +1,103 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <span *ngFor="let chatUser of conversation?.users">
+        <span class="innerCont" *ngIf="chatUser?.username !== user?.username" (click)="viewProfile(chatUser)">
+          <div class="img_cont">
+            <img class="user-img" [src]="chatUser?.thumb || 'assets/imgs/nopic-profile.png'" onerror="this.src = 'assets/imgs/nopic-profile.png'">
+          </div>
+          <div class="titleName">{{chatUser?.firstName || chatUser?.username}} <span *ngIf="chatUser?.firstName">{{chatUser?.lastName}}</span></div>
+        </span>
+      </span>
+    </ion-title>
+    <!--<ion-fab style="top: 0px;" top right #fab>-->
+      <!--<button ion-fab mini>-->
+        <!--<ion-icon name="add" role="img" class="icon icon-ios ion-ios-add" aria-label="add"></ion-icon>-->
+      <!--</button>-->
+      <!--<ion-fab-list side="left">-->
+        <!--<button ion-button (click)="addByContacts(fab)">-->
+          <!--Contacts <ion-icon name="contacts" style="padding-left: 5px;"></ion-icon>-->
+        <!--</button>-->
+        <!--<button ion-button (click)="addByUsername(fab)">-->
+          <!--Username <ion-icon name="person-add" style="padding-left: 5px;"></ion-icon>-->
+        <!--</button>-->
+      <!--</ion-fab-list>-->
+    <!--</ion-fab>-->
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content (ionScroll)="didScroll($event)">
+
+  <div class="message-wrap">
+
+    <div *ngIf="!msgList || !msgList.length">
+      <br>
+      <br>
+      <br>
+      <h4 text-center>No messages yet</h4>
+    </div>
+
+    <div *ngIf="hasLoadedMessages" class="msg_cont">
+      <div *ngFor="let msg of msgList; let msgIndex = index;" class="message" [class.left]=" msg?.sentBy !== user.$id " [class.right]=" msg?.sentBy === user.$id" lazy-load-images>
+        <!-- <div class="img_cont">
+            <img class="user-img" [src]="msg.thumb || 'assets/imgs/nopic-profile.png'" onerror="this.src='assets/imgs/nopic-profile.png'" (click)="viewProfile({$id: msg?.sentBy})">
+        </div> -->
+        <div class="msg-detail" [ngClass]="{'msg-detail-with-media': msg?.mediaUrl}">
+          <div class="msg-content">
+            <!-- <span class="triangle"></span> -->
+            <img *ngIf="msg?.mediaUrl && hasScrolled" [attr.data-src]="msg?.mediaUrl || ''" (press)="copyText(msg?.mediaUrl)" imageViewer />
+            <p class="line-breaker">
+              <!--{{msg?.message[user.language]}}-->
+              <span [innerHTML]="msg?.message[user.language] | linky" (press)="copyText(msg?.message[user.language])" (click)="expandMessage(msg, msgIndex)" style="display: block;"></span>
+              <span *ngIf="msg?.expanded" [innerHTML]="msg?.message[msg?.translatedFrom] + ' - original' | linky" (click)="expandMessage(msg, msgIndex)" style="display: block; padding-top: 10px; font-style: italic;"></span>
+            </p>
+            <div *ngIf="msg?.meta?.link" class="meta-link" (click)="openLink(msg?.meta?.link?.rawUrl)">
+              <div style="width: 100px; float: left;">
+                <img id="icon" style="width: 90px;" src="{{msg?.meta?.link?.icon}}" />
+              </div>
+              <h3>{{msg?.meta?.link?.title  || '---------'}}</h3>
+              <h6>{{msg?.meta?.link?.rawUrl}}</h6>
+              <span>{{msg?.meta?.link?.description || '--------------------'}}</span>
+            </div>
+          </div>
+          <!--<div class="msg-info">-->
+            <!--<p>-->
+              <!--{{msg?.username}}&nbsp;&nbsp;{{msg?.time | relativeTime}}</p>-->
+          <!--</div>-->
+        </div>
+      </div>
+      <h6 style="color: rgba(150, 150, 150, 0.8); font-size: 0.8em;" *ngIf="msgList.length">
+        Read by
+        <span *ngFor="let id of objectKeys(conversation?.readBy || {})" style="margin-right: 5px;">
+          {{conversation?.readBy[id]}}
+          <span *ngIf="conversation?.typing && conversation?.typing[id] && id !== profile?.$id">is typing...</span>
+        </span>
+      </h6>
+    </div>
+
+  </div>
+
+  <input type="text" id="copy-container" style="position: fixed; left: -50px; opacity: 0;" />
+
+</ion-content>
+
+<ion-footer no-border [style.height]="showEmojiPicker ? '255px' : '45px'">
+  <div class="input-wrap" style="padding-left: 0px;">
+    <!--<button ion-button clear icon-only item-right (click)="switchEmojiPicker()">-->
+      <!--<ion-icon name="md-happy"></ion-icon>-->
+    <!--</button>-->
+    <!-- <button ion-button clear icon-only item-right (click)="presentActionSheet()" *ngIf="!isBrowser"> -->
+      <button ion-button clear icon-only item-right (click)="presentActionSheet()" >
+          <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+    </button>
+    <input type="text" #chat_input id="message-entry" placeholder="Message" [(ngModel)]="editorMsg" (ngModelChange)="isTyping($event)" (keyup.enter)="sendMsg()" (focusin)="onFocus()">
+    <!-- <textarea autosize #chat_input id="message-entry" placeholder="Message" [(ngModel)]="editorMsg" (ngModelChange)="isTyping($event)" (keyup.enter)="sendMsg()" (focusin)="onFocus()">
+    </textarea> -->
+    <button ion-button clear icon-only item-right (click)="sendMsg()">
+      <ion-icon name="ios-send" ios="ios-send" md="md-send"></ion-icon>
+    </button>
+  </div>
+  <!--<emoji-picker [(ngModel)]="editorMsg"></emoji-picker>-->
+</ion-footer>

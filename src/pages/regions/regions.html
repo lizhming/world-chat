@@ -1,0 +1,45 @@
+<!--<ion-header class="cHeader">-->
+<!--  <ion-navbar>-->
+<!--    <ion-title>-->
+<!--      Regions-->
+<!--      <button ion-button>-->
+<!--        Username <ion-icon name="person-add" style="padding-left: 5px;"></ion-icon>-->
+<!--      </button>-->
+<!--    </ion-title>-->
+<!--  </ion-navbar>-->
+<!--</ion-header>-->
+<ion-content padding>
+  <ion-title style="text-align: center; margin-bottom: 40px;">
+    Regions
+    <button ion-button style="position: fixed; top: 20px; right: 0px; background-color: #02be98;" (click)="addRegionPost()">
+      Add <ion-icon name="cloud-upload" style="margin-left: 10px; font-size: 1.2em;"></ion-icon>
+    </button>
+  </ion-title>
+
+  <ion-card class="sc-ion-card-ios-h sc-ion-card-ios-s hydrated" *ngFor="let post of regionPosts; let i = index;" style="position: relative;">
+    <ion-icon name="trash" style="color: black; position: absolute; top:0px; right: 0px; font-size: 2em; padding: 5px 10px; background-color: white; border-radius: 10px;"
+              *ngIf="user.$id == post?.authorId" (click)="deletePost(post, i)"></ion-icon>
+    <img *ngIf="post?.image" [src]="post?.image" imageViewer>
+    <ion-card-header class="hydrated" style="padding-bottom: 8px;" (click)="viewProfile(post?.authorId)">
+      <ion-card-subtitle role="heading" aria-level="3" class="hydrated">
+        <span *ngIf="post?.authorThumb" [style.backgroundImage]="'url(' + post?.authorThumb + ')'" style="width: 40px; height: 40px; display: inline-block; background-size: cover; background-position: center; border-radius: 50%; vertical-align: middle;"></span>
+        <span style="width: calc(100% - 40px); display: inline-block; vertical-align: middle; padding-left: 5px;">
+          {{post?.author}}
+          <div style="font-size: 0.7em;">{{post?.timestamp | relativeTime}}</div>
+        </span>
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content class="card-content card-content-ios hydrated" *ngIf="post.message[user.language]">
+      <ion-card-title role="heading" aria-level="2" class="hydrated">{{post.message[user.language].locationName}}, {{post.message[user.language].region}}</ion-card-title>
+      {{post.message[user.language].description}}
+    </ion-card-content>
+    <ion-card-content class="card-content card-content-ios hydrated" *ngIf="!post.message[user.language]" style="text-align: center">
+      <ion-card-title role="heading" aria-level="2" class="hydrated">Translation in progress..</ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="!regionPosts.length" style="text-align: center; padding-top: 100px;">
+    <h1>No Posts Within Last 24 Hours</h1>
+  </div>
+
+</ion-content>

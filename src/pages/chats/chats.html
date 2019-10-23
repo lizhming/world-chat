@@ -1,0 +1,115 @@
+<div class="profile-tab" *ngIf="isBrowser">
+  <img class="user-img self-img" [src]="user?.thumb || 'assets/imgs/nopic-profile.png'" imageViewer
+    onerror="this.src = 'assets/imgs/nopic-profile.png'">
+  <h3>{{user?.firstName}} {{user?.lastName}}</h3>
+  <button (click)="viewProfile();">View Profile</button>
+</div>
+
+<!-- <div class="chats-tab"> -->
+  <ion-header class="cHeader">
+    <ion-navbar>
+      <ion-title align-title="center">
+        Messages
+      </ion-title>
+    </ion-navbar>
+    <ion-fab class="cFab" top right #fab>
+      <button ion-fab mini>
+        <ion-icon name="add" role="img" class="icon icon-ios ion-ios-add" aria-label="add"></ion-icon>
+      </button>
+      <ion-fab-list side="bottom">
+        <!-- <button ion-button (click)="addByContacts(fab)" *ngIf="!isBrowser && !isWorldChatPremiumAccount">
+          Contacts <ion-icon name="contacts" style="padding-left: 5px;"></ion-icon>
+        </button> -->
+        <button ion-button (click)="addByContacts(fab)" *ngIf="!isBrowser">
+          Contacts <ion-icon name="contacts" style="padding-left: 5px;"></ion-icon>
+        </button>
+        <button ion-button (click)="addByUsername(fab)">
+          Username <ion-icon name="person-add" style="padding-left: 5px;"></ion-icon>
+        </button>
+        <button ion-button (click)="addByGroupChat(fab)">
+          Group Chat <ion-icon name="people" style="padding-left: 5px;"></ion-icon>
+        </button>
+      </ion-fab-list>
+    </ion-fab>
+  </ion-header>
+
+  <ion-content padding>
+    <!--<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>-->
+
+    <div *ngIf="!chats || !chats.length">
+      <br>
+      <br>
+      <br>
+      <h4 text-center class="infoMsg">No conversations yet</h4>
+    </div>
+    <ion-list *ngIf="hasLoadedChats">
+      <ion-item-sliding *ngFor="let chat of chats; index as i" #item [class.hasBeenRead]="chat.readBy[user?.$id]">
+        <ion-item (click)="viewConversation(chat)" *ngIf="chat"
+          [class.multi-container]="chat?.users && chat?.users.length > 2">
+          <!--<ion-avatar item-left>-->
+          <!--<img src="./assets/user.png">-->
+          <!--</ion-avatar>-->
+          <ion-row>
+            <ion-col class="first-col" *ngIf="chat?.users && chat?.users.length < 3">
+              <img class="user-img" [src]="chat?.users[0].thumb || 'assets/imgs/nopic-profile.png'" imageViewer
+                onerror="this.src = 'assets/imgs/nopic-profile.png'">
+            </ion-col>
+            <ion-col class="first-col multi-users" *ngIf="chat?.users && chat?.users.length > 2"
+              style="overflow: visible;">
+              <img class="user-img" [src]="chat?.users[0].thumb || 'assets/imgs/nopic-profile.png'" imageViewer
+                onerror="this.src = 'assets/imgs/nopic-profile.png'"
+                style="position: absolute; z-index: 999; top: 8px; left: 0px; width: 35px; height: 35px;">
+              <img class="user-img" [src]="chat?.users[1].thumb || 'assets/imgs/nopic-profile.png'" imageViewer
+                onerror="this.src = 'assets/imgs/nopic-profile.png'"
+                style="position: absolute; top: -8px; left: 0px; width: 35px; height: 35px;">
+              <img class="user-img" [src]="chat?.users[2].thumb || 'assets/imgs/nopic-profile.png'" imageViewer
+                onerror="this.src = 'assets/imgs/nopic-profile.png'"
+                style="position: absolute; left: 15px; width: 35px; height: 35px;">
+            </ion-col>
+            <ion-col class="second-col" style="overflow-x: hidden;">
+              <span class="chat-title">
+                <span *ngFor="let chatUser of chat.users">
+                  <span *ngIf="chatUser?.username !== user?.username">
+                    {{chatUser?.firstName || chatUser?.username}} <span
+                      *ngIf="chatUser?.firstName">{{chatUser?.lastName}}</span>
+                  </span>
+                </span>
+              </span>
+              <span class="chat-last-time" *ngIf="chat?.lastMessage">
+                {{chat?.lastMessage?.time | dayOrTime}}
+              </span>
+              <span class="chat-last-message" *ngIf="chat?.lastMessage?.type && chat?.lastMessage?.type === 'image'">
+                image.jpg
+              </span>
+              <span class="chat-last-message"
+                *ngIf="chat?.lastMessage?.message && (!chat?.lastMessage?.type || chat?.lastMessage?.type === 'text')">
+                {{chat?.lastMessage?.message[user?.language] || 'Click to translate'}}
+              </span>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="deleteChat(chat, i)">Delete</button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>
+<!-- </div> -->
+
+
+<div class="web-navbar">
+
+</div>
+<div class="message-view" *ngIf="selectedConversation">
+  <page-conversation [conversation]="selectedConversation"></page-conversation>
+</div>
+
+<div class="message-view message-view-no-chats" *ngIf="!selectedConversation && isBrowser">
+  <img src="assets/imgs/logo.png" class="logo" />
+  <h1>Welcome to World Chat!</h1>
+  <h2>Version 0.34</h2>
+  <br>
+  <p>Contact us with any questions or concerns:</p>
+  <p style="margin-bottom: 7.5px;">Email: TheExhibitionOnTour@gmail.com</p>
+  <p style="margin-top: 0px;">Phone: (816) 716-7156</p>
+</div>

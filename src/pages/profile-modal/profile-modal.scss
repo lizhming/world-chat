@@ -1,0 +1,63 @@
+page-profile-modal {
+    .toolbar-background{
+    box-shadow: none;
+    border-color: #fff;
+    background: #fff !important;
+
+  }
+  .toolbar-content{
+    text-align: center;
+  }
+  .header-md::after{
+    content: none;
+  }
+
+  .btnClose{
+      font-size: 20px;
+  }
+  .profile_list {
+    .item {
+      padding-left: 0;
+      margin-bottom: 8px;
+
+      &:last-child {
+        .item-inner {
+            border-bottom: 1px solid #dedede;
+        }
+      }
+
+    }
+
+    .input-wrapper {
+      display: block;
+
+      .label {
+        color: #000;
+
+        &:nth-child(1) {
+          font-size: 13px;
+          margin: 6px 8px 6px 0;
+        }
+
+        &:nth-child(2) {
+          font-size: 16px;
+          font-weight: 600;
+          margin: 6px 8px 6px 0;
+        }
+      }
+    }
+  }
+
+  .profile_header {
+    position: relative;
+
+    .img_cont {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+
+  }
+}

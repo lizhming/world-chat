@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ProfileModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="closeModal()" class="btnClose"><ion-icon slot="icon-only" ios="ios-close-circle" md="md-close-circle"></ion-icon></button>
+    </ion-buttons>
+    <!-- <ion-title>Set Profile</ion-title>   -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="profile_header">
+        <div class="img_cont">
+            <img [src]="user.thumb" *ngIf="user && user.thumb" (click)="presentActionSheet()"/>
+        </div>
+        <ion-title align="center">Set Profile</ion-title>  
+    </div>
+  <br />
+  
+
+  <br />
+
+  <ion-item *ngIf="!originalUser?.email">
+    <ion-label color="primary" stacked style="overflow: visible;"><b>Set email (can be used to login). !Warning! Cannot
+        be changed.</b></ion-label>
+    <ion-input type="email" placeholder="Email" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+  <button ion-button (click)="saveProfile()" style="margin-left: 20px;" *ngIf="!originalUser?.email">Finalize Email</button>
+
+  <br>
+
+  <ion-list class="profile_list">
+    <ion-item>
+      <ion-label stacked>First Name</ion-label>
+      <ion-input type="text" placeholder="First Name" [(ngModel)]="user.firstName" (ionChange)="saveProfile()"></ion-input>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label stacked>Last Name</ion-label>
+      <ion-input type="text" placeholder="Last Name" [(ngModel)]="user.lastName" (ionChange)="saveProfile()"></ion-input>
+    </ion-item>
+    <br />
+    <ion-item>
+        <ion-label stacked>Language</ion-label>
+      <ion-select [(ngModel)]="lang" (ionChange)="saveProfile()">
+        <ion-option *ngFor="let o of language" [value]="o.code">{{o.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

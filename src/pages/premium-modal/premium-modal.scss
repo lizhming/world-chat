@@ -1,0 +1,107 @@
+page-premium-modal {
+  ion-header {
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  ion-navbar {
+    text-align: center;
+
+    .back-button {
+      position: absolute;
+      left: 0px;
+      top: 10px;
+      z-index: 99999;
+    }
+
+    .toolbar-background {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  ion-title {
+    max-width: calc(100% - 80px);
+    margin: 0px auto;
+
+    .innerCont {
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .titleName {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .bg-theme {
+    background-color: #00be98;
+    //background-color: rgb(2, 190, 152);
+  }
+
+  .pricing-item {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    padding-bottom: 40px;
+  }
+  .text-center {
+    text-align: center;
+  }
+
+  .pricing-item .btn-area button {
+    color: #fff;
+    background-color: #00be98;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  .pricing-item .btn-area button:hover {
+    color: #fff;
+    background-color: #00be98;
+  }
+
+  .prc-head {
+    padding: 23px 0px;
+  }
+
+  .prc-head span {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0;
+    margin-bottom: 3px;
+  }
+
+  .prc-head h4 {
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0;
+  }
+
+  ul.prc-list {
+    margin: 20px 0px 22px;
+    padding-left: 10px;
+    padding-right: 10px;
+    list-style: none;
+  }
+
+  ul.prc-list li {
+    font-size: 18px;
+    color: #272727;
+    letter-spacing: 0;
+    padding: 10px 0px;
+    line-height: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    list-style: none;
+  }
+
+  ul.prc-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0px;
+  }
+}

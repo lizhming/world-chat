@@ -1,0 +1,116 @@
+page-contact {
+  ion-title span {
+    font-size: 0.8em;
+    float: right;
+  }
+  .toolbar-background {
+    box-shadow: none;
+    border-color: #fff;
+    background: #fff !important;
+  }
+  .toolbar-content {
+    text-align: center;
+  }
+  .header-md::after {
+    content: none;
+  }
+
+  .btnClose {
+    // position: absolute;
+    // top: 8px;
+    // right: 12px;
+
+    button {
+      font-size: 22px;
+      background-color: transparent;
+      color: #333;
+      box-shadow: none;
+    }
+  }
+
+  .profile_header {
+    position: relative;
+    .img_cont {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .qrCode {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    img {
+      width: 50px;
+      height: auto;
+    }
+  }
+  .btn_edit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    .button {
+      background: #fff;
+      color: #02be98;
+      box-shadow: none;
+      font-size: 16px;
+    }
+  }
+  .profile_list {
+    .item {
+      padding-left: 0;
+      margin-bottom: 8px;
+    }
+    .input-wrapper {
+      display: block;
+      .label {
+        color: #000;
+        &:nth-child(1) {
+          font-size: 13px;
+          margin: 6px 8px 6px 0;
+        }
+        &:nth-child(2) {
+          font-size: 16px;
+          font-weight: 600;
+          margin: 6px 8px 6px 0;
+        }
+      }
+    }
+  }
+
+  .btn_logout {
+    margin: 0 auto;
+    font-size: 16px;
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    max-width: 140px;
+    text-align: center;
+    background: #02be98;
+    border-radius: 12px;
+    color: #fff;
+    &.activated {
+      background: rgba(2, 190, 152, 0.8);
+      color: #fff;
+    }
+  }
+  .button-clear-md-secondary {
+    border-color: transparent;
+    color: #02be98;
+    background-color: transparent;
+  }
+}

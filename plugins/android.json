@@ -1,0 +1,68 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-clipboard": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-plugin-fcm-with-dependecy-updated": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-plugin-admobpro": {
+      "PLAY_SERVICES_VERSION": "16.0.0",
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-plugin-admob-free": {
+      "PLAY_SERVICES_VERSION": "11.0.4",
+      "PACKAGE_NAME": "com.letschat.app"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-extension": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-promise-polyfill": {
+      "PACKAGE_NAME": "com.letschat.app"
+    },
+    "cordova-admob-sdk": {
+      "PLAY_SERVICES_VERSION": "11.0.4",
+      "PACKAGE_NAME": "com.letschat.app"
+    }
+  }
+}

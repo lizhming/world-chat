@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "893888740923",
+    "firebase_url": "https://letstalk-205602.firebaseio.com",
+    "project_id": "letstalk-205602",
+    "storage_bucket": "letstalk-205602.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893888740923:android:3b2717997dc43cf14ce61e",
+        "android_client_info": {
+          "package_name": "com.letschat.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893888740923-7slimmlrkq0aoahkup40so7vb62pthg2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNiOlWmuFI-35m_vOYQI1T-0_jmf_AAn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893888740923-7slimmlrkq0aoahkup40so7vb62pthg2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "893888740923-gbatak4ltk9ed79vb9s45bgdg1l1d38a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.letschat.mobile",
+                "app_store_id": "1421570450"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

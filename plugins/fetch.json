@@ -1,0 +1,155 @@
+{
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@^1.3.3"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device@^2.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-splashscreen": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-splashscreen@^5.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-ionic-webview": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-ionic-webview@^1.2.1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-ionic-keyboard": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-ionic-keyboard@^2.1.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-contacts": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-contacts@^2.3.1"
+    },
+    "is_top_level": true,
+    "variables": {
+      "CONTACTS_USAGE_DESCRIPTION": " "
+    }
+  },
+  "cordova-plugin-compat": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-compat@^1.0.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-camera": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-camera@~4.0.3"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "phonegap-plugin-barcodescanner": {
+    "source": {
+      "type": "registry",
+      "id": "phonegap-plugin-barcodescanner@~8.0.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+"
+    }
+  },
+  "cordova-plugin-inappbrowser": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-inappbrowser@~3.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-clipboard": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-clipboard@~1.2.1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-statusbar": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-statusbar@^2.4.3"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-fcm-with-dependecy-updated": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-fcm-with-dependecy-updated@^2.2.6"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-admobpro": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-admobpro@^2.35.3"
+    },
+    "is_top_level": true,
+    "variables": {
+      "PLAY_SERVICES_VERSION": "16.0.0",
+      "ADMOB_APP_ID": "ca-app-pub-9161240946129783~4517916437"
+    }
+  },
+  "cordova-plugin-extension": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-extension"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-admob-free": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-admob-free@~0.17.3"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ADMOB_APP_ID": "ca-app-pub-9161240946129783~9424324062"
+    }
+  },
+  "cordova-promise-polyfill": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-promise-polyfill@~0.0.2"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-admob-sdk": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-admob-sdk@~0.17.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  }
+}

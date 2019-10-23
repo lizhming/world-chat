@@ -1,0 +1,64 @@
+{
+  "_from": "cordova-plugin-fcm-with-dependecy-updated@~2.2.6",
+  "_id": "cordova-plugin-fcm-with-dependecy-updated@2.2.6",
+  "_inBundle": false,
+  "_integrity": "sha512-cOzNjWQKnT8RMzWSfKb5tWBW8ro0b8OWhRC9CGdo4uAsTMs0wcIFvwGST0Eqkjf+KF5RusQs7hSg+7yXJTB+tQ==",
+  "_location": "/cordova-plugin-fcm-with-dependecy-updated",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "cordova-plugin-fcm-with-dependecy-updated@~2.2.6",
+    "name": "cordova-plugin-fcm-with-dependecy-updated",
+    "escapedName": "cordova-plugin-fcm-with-dependecy-updated",
+    "rawSpec": "~2.2.6",
+    "saveSpec": null,
+    "fetchSpec": "~2.2.6"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-fcm-with-dependecy-updated/-/cordova-plugin-fcm-with-dependecy-updated-2.2.6.tgz",
+  "_shasum": "cf95118f2aeb8e71b70664e1e6e518c209827885",
+  "_spec": "cordova-plugin-fcm-with-dependecy-updated@~2.2.6",
+  "_where": "E:\\Freelancer\\20190902_ionic\\ionic_worldChat",
+  "author": {
+    "name": "André Augusto Tissot"
+  },
+  "bugs": {
+    "url": "https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated/issues"
+  },
+  "bundleDependencies": false,
+  "cordova_name": "Cordova FCM Push Plugin",
+  "deprecated": false,
+  "description": "Google Firebase Cloud Messaging Cordova Push Plugin fork with dependecy updated",
+  "engines": [],
+  "englishdoc": "",
+  "homepage": "https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated#readme",
+  "issue": "",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "notifications",
+    "push",
+    "firebase",
+    "fcm",
+    "ios",
+    "android",
+    "cordova"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-fcm-with-dependecy-updated",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "repo": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated.git"
+  },
+  "version": "2.2.6"
+}
