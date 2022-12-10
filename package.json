@@ -41,7 +41,7 @@
     "cordova": "^9.0.0",
     "cordova-admob-sdk": "^0.17.0",
     "cordova-android": "^8.0.0",
-    "cordova-browser": "~5.0.4",
+    "cordova-browser": "~6.0.0",
     "cordova-clipboard": "~1.2.1",
     "cordova-ios": "~4.5.5",
     "cordova-plugin-admob-free": "~0.17.3",
